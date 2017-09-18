@@ -19,6 +19,16 @@ public class Book {
     private int pageCount;
     private BigDecimal price;
 
+    public Book(String title, Date publishDate, int pageCount, BigDecimal price) {
+        this.title = title;
+        this.publishDate = publishDate;
+        this.pageCount = pageCount;
+        this.price = price;
+    }
+
+    public Book() {
+    }
+
     public Long getBookId() {
         return bookId;
     }
