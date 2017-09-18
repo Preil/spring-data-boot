@@ -1,4 +1,4 @@
-package com.oreilly.data.entities;
+package com.oreilly.sdata.entities;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

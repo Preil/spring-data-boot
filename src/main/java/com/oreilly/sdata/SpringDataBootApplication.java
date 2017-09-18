@@ -1,6 +1,6 @@
-package com.oreilly.data;
+package com.oreilly.sdata;
 
-import com.oreilly.data.entities.Book;
+import com.oreilly.sdata.entities.Book;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
