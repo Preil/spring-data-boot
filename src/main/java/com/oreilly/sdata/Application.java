@@ -1,7 +1,6 @@
 package com.oreilly.sdata;
 
-import com.oreilly.sdata.entities.Book;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -12,12 +11,9 @@ import java.util.Date;
 public class Application {
 
     public static void main(String[] args) {
-        try (AnnotationConfigApplicationContext context =
-                     new AnnotationConfigApplicationContext(DataConfiguration.class)){
-            BookService service = context.getBean(BookService.class);
-            Book book = new Book("First book", new Date(), 33, new BigDecimal("26.00"));
-            service.save(book);
-        }
-
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
+        BookService service = context.getBean(BookService.class);
+        Book book = new Book("Catcher in the Rye", new Date(), 250, new BigDecimal("15.00"));
+        service.save(book);
     }
 }
