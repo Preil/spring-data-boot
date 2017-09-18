@@ -1,6 +1,5 @@
 package com.oreilly.sdata;
 
-import com.oreilly.sdata.entities.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

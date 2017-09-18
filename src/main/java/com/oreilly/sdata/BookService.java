@@ -1,6 +1,5 @@
 package com.oreilly.sdata;
 
-import com.oreilly.sdata.entities.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
