@@ -13,7 +13,7 @@ public class Application {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
         BookRepository repository = context.getBean(BookRepository.class);
 
-       repository.delete(repository.findAll(new ArrayList<Long>(){{
+       repository.deleteInBatch(repository.findAll(new ArrayList<Long>(){{
            add(1L);
            add(2L);
            add(3L);
