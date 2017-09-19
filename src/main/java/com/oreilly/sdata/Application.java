@@ -10,7 +10,8 @@ public class Application {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
         BookRepository repository = context.getBean(BookRepository.class);
-
-       repository.deleteAllInBatch();
+        //just two methods allowed.
+       repository.findAll();
+       repository.findOne(1L);
     }
 }
