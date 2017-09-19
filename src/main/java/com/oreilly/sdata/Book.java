@@ -13,10 +13,19 @@ import java.util.Date;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "BOOK_ID")
     private Long bookId;
+
+    @Column(name = "TITLE")
     private String title;
+
+    @Column(name = "PUBLISH_DATE")
     private Date publishDate;
+
+    @Column(name = "PAGE_COUNT")
     private int pageCount;
+
+    @Column(name = "PRICE")
     private BigDecimal price;
 
     public Book(String title, Date publishDate, int pageCount, BigDecimal price) {
@@ -67,5 +76,16 @@ public class Book {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookId=" + bookId +
+                ", title='" + title + '\'' +
+                ", publishDate=" + publishDate +
+                ", pageCount=" + pageCount +
+                ", price=" + price +
+                '}';
     }
 }
