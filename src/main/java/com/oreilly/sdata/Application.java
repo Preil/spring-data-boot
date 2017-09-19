@@ -2,6 +2,7 @@ package com.oreilly.sdata;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,7 +14,11 @@ public class Application {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
         BookRepository repository = context.getBean(BookRepository.class);
 
-        List<Book> books = repository.findAll();
+        List<Book> books = repository.findAll(new ArrayList<Long>(){{
+            add(1L);
+            add(3L);
+            add(7L);
+        }});
         for(Book book:books){
             System.out.println(book);
         }
