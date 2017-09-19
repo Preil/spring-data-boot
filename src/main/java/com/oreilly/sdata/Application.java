@@ -11,6 +11,6 @@ public class Application {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
         BookRepository repository = context.getBean(BookRepository.class);
 
-       repository.delete(1L);
+       repository.delete(repository.findOne(1L));
     }
 }
