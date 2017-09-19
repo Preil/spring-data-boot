@@ -3,7 +3,9 @@ package com.oreilly.sdata;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Ilya 18.09.2017.
@@ -14,12 +16,13 @@ public class Application {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
         BookRepository repository = context.getBean(BookRepository.class);
 
-        Book book = new Book();
-        book.setTitle("Title");
-        book.setPageCount(100);
-        book.setPrice(new BigDecimal("15.00"));
-        book.setPublishDate(new Date());
+        List<Book> books = new ArrayList<Book>();
+        books.add(new Book("qqq", new Date(), 111, new BigDecimal("222.00")));
+        books.add(new Book("www", new Date(), 222, new BigDecimal("333.00")));
+        repository.save(books);
 
-        repository.save(book);
+        for (Book book : repository.findAll()) {
+            System.out.println(book);
+        }
     }
 }
